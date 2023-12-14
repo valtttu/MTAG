@@ -4,11 +4,11 @@ function [dm, de, di, eline] = lecture_function(n_seats)
         courses = {'Soft condensed matter physics', 'Solid-state physics', 'Finite-element method', 'Statistical mechanics'};
         effect = {[-5, 7], [-7, 6], [-5, 6], [-4, 2]};
         ind = ceil(rand()*length(courses));
-        if(ind ~= 4)
+        if(rem(ind,2) == 0)
             disp(['Today the lecture is about ' courses{ind} ' and it is quite nice!']);
         else 
             disp(['Today the lecture is about ' courses{ind} ' and ']);
-            disp('you struggle a lot with the english of the lecturer...');
+            disp('you struggle with the english of the lecturer...');
         end
         de = effect{ind}(1);
         di = effect{ind}(2);
